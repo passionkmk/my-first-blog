@@ -6,15 +6,13 @@
         <div>
             <h1><a href="https://github.com/passionkmk">PKMK's Github</a></h1>
         </div>
-        <div>
-            <p>생성일 2018-11-27 19:57</p>
-            <h2>My First Post</h2>
-            <p>나의 첫번째 포스팅이다.</p>
-        </div>
-        <div>
-            <p>생성일 2018-11-27 19:59</p>
-            <h2>My Second Post</h2>
-            <p>나의 두번째 포스팅이다.</p>
-        </div>
+        {% for post in posts %}
+            <br>
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
